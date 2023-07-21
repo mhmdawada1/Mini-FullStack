@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
       })
       .catch((error) => console.log(error));
     });
-})
+
 
 document.getElementById("signin").addEventListener("submit", function(event) {
     event.preventDefault();
@@ -32,4 +32,5 @@ document.getElementById("signin").addEventListener("submit", function(event) {
     })
     .catch((error) => console.log(error));
   });
-  
+
+  })
