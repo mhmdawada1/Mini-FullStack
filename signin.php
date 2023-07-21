@@ -25,8 +25,8 @@ if ($num_rows == 0) {
 } else {
     if (password_verify($password, $hashed_password)) {
         $response['status'] = 'success!';
-        $response['user_id'] = $id;
-        $response['first_name'] = $first_name;
+        $response['id'] = $id;
+        $response['fname'] = $first_name;
         $response['username'] = $username;
     } else {
         $response['status'] = "wrong password";
