@@ -25,7 +25,7 @@ document.getElementById("signin").addEventListener("submit", function(event) {
     .then((response) => response.json())
     .then((data) => {
       if (data.status == "logged in") {
-        window.location.href = `dashboard.html?username=${encodeURIComponent(data.username)}`;
+        window.location.href = `welcome.html?username=${encodeURIComponent(data.username)}`;
     } else {
         alert(data.status);
       }
