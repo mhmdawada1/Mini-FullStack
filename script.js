@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("signup").addEventListener("submit", function(event) {
-      event.preventDefault();
+    document.getElementById("signup").addEventListener("submit", function(e) {
+      e.preventDefault();
   
-      fetch("http://127.0.0.1/Register-Login-system-back-and-front-end/apis/signup.php", {
+      fetch("http://127.0.0.1/Mini-FullStack/signup.php", {
         method: "POST",
-        body: new FormData(event.target)
+        body: new FormData(e.target)
       }) .then((response) => response.json())
          .then((data) => {
         alert(data.message); 
@@ -12,16 +12,16 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 
-document.getElementById("signin").addEventListener("submit", function(event) {
-    event.preventDefault();
+document.getElementById("signin").addEventListener("submit", function(e) {
+    e.preventDefault();
   
-    const formData = new FormData(event.target);
-    fetch("http://127.0.0.1/Register-Login-system-back-and-front-end/apis/signin.php", {
+    const formData = new FormData(e.target);
+    fetch("http://127.0.0.1/Mini-FullStack/signin.php", {
       method: "POST",
       body: formData
     }).then((response) => response.json())
       .then((data) => {
-      if (data.status == "logged in") {
+      if (data.status == "success!") {
         window.location.href = `welcome.html?username=${encodeURIComponent(data.username)}`;
     } else {
         alert(data.status);

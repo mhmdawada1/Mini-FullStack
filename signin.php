@@ -24,7 +24,7 @@ if ($num_rows == 0) {
     $response['status'] = " user not found ";
 } else {
     if (password_verify($password, $hashed_password)) {
-        $response['status'] = 'logged in';
+        $response['status'] = 'success!';
         $response['user_id'] = $id;
         $response['first_name'] = $first_name;
         $response['username'] = $username;
